@@ -47,12 +47,17 @@ app.listen(PORT, () => {
   console.log(`🚀 DEPLOYMENT ENGINE: Running Live on http://localhost:${PORT}`);
   console.log(`🎯 VERIFICATION TARGET: http://localhost:${PORT}/api/welfare/status`);
 });
-// At the very bottom of server.js
-const PORT = process.env.PORT || 5000;
+// =======================================================
+// UNIVERSAL SERVERLESS HANDSHAKE ANCHOR (AMENDED CORRECTION)
+// =======================================================
+
+// Note: Removed duplicate const PORT initialization from line 51
+
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
   app.listen(PORT, () => {
-    console.log(`🚀 DEPLOYMENT ENGINE: Running on port ${PORT}`);
+    console.log(`🚀 DEPLOYMENT ENGINE: Running Live on port ${PORT}`);
+    console.log(`🎯 VERIFICATION TARGET: http://localhost:${PORT}/api/welfare/status`);
   });
 }
 
-module.exports = app; // The universal serverless handshake anchor
+module.exports = app; // The clean universal export anchor
